@@ -5,7 +5,7 @@
 </script>
 
 <nav class="mx-auto my-12 flex max-w-3xl justify-between rounded-3xl px-8 py-4 shadow-md shadow-gray-300">
-  <h3 class="self-center font-semibold text-gray-700">Category</h3>
+  <h3 class="self-center font-semibold text-gray-700">All Categories</h3>
   <div class="flex space-x-4">
     {@render button('Home', '/')}
     {@render button('Diary', '/diaries')}

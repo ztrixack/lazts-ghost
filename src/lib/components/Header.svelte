@@ -1,5 +1,6 @@
 <script lang="ts">
   import Icon from '@iconify/svelte';
+  import BrandIcon from './BrandIcon.svelte';
 
   let { facebook, twitter, youtube } = $props<{
     facebook: string | undefined;
@@ -42,10 +43,7 @@
     <div class="container mx-auto px-8 py-4">
       <div class="flex h-16 items-center justify-between">
         <div class="md:flex md:items-center md:gap-12">
-          <a class="block rounded-full border border-gray-500 p-1" href="/">
-            <span class="sr-only">Home</span>
-            <Icon icon="la:dragon" class="h-8 w-8 text-gray-500" />
-          </a>
+          <BrandIcon />
         </div>
 
         <div class="hidden md:block">

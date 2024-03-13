@@ -12,13 +12,13 @@
       style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 32px 32px;"
     />
     <div class="flex flex-col justify-center text-center">
-      <h1 class="text-[9.5vmin] font-bold leading-tight tracking-tight text-white md:text-[8.5vmin]">
-        <span class="bg-gradient-to-br from-gray-500 via-orange-500 to-gray-500 bg-clip-text text-transparent">
+      <h1 class="text-[9.5vmin] font-bold leading-tight tracking-wider text-white md:text-[8.5vmin]">
+        <span class="bg-gradient-to-br from-gray-900 via-orange-50 to-gray-900 bg-clip-text text-transparent">
           {title}
         </span>
       </h1>
-      <h4 class="block text-3xl font-medium">
-        <span class="bg-gradient-to-br from-gray-500 via-orange-500 to-gray-500 bg-clip-text text-transparent">
+      <h4 class="mt-2 block text-3xl font-medium">
+        <span class="bg-gradient-to-br from-gray-500 via-orange-50 to-gray-500 bg-clip-text text-transparent">
           {description}
         </span>
       </h4>
