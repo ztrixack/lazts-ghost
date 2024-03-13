@@ -3,10 +3,10 @@
   import Footer from '$lib/components/Footer.svelte';
   import '../app.css';
 
-  let { children } = $props();
+  let { data, children } = $props();
 </script>
 
-<Header />
+<Header facebook={data.settings.facebook} twitter={data.settings.twitter} youtube="ztrixack" />
 
 {@render children()}
 

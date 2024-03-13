@@ -6,7 +6,7 @@
   let { posts, pagination } = $props<{ posts: PostOrPage[]; pagination: Pagination }>();
 </script>
 
-<div class="container mx-auto my-12 flex max-w-screen-lg flex-col space-y-4">
+<div class="container mx-auto my-12 flex flex-col space-y-4">
   {#each posts as post (post.uuid)}
     <BlogCard
       title={post.title}
@@ -15,7 +15,7 @@
       feature_image={post.feature_image?.toString()}
       feature_image_alt={post.feature_image_alt?.toString()}
       published_at={post.published_at?.toString()}
-      link="/trips/{post.slug}"
+      link="/journeys/{post.slug}"
     />
   {/each}
 </div>

@@ -1,20 +1,12 @@
 <script lang="ts">
-  import Featured from '$lib/components/Featured.svelte';
-  import Navigation from '$lib/components/Navigation.svelte';
+  import Hero from '$lib/components/Hero.svelte';
   import PostList from '$lib/components/PostList.svelte';
+  import Filter from '$lib/components/Filter.svelte';
 
   let { data } = $props();
 </script>
 
-<Featured
-  title={data.settings.title}
-  description={data.settings.description}
-  cover_image={data.settings.cover_image}
-  facebook={data.settings.facebook}
-  twitter={data.settings.twitter}
-  youtube="ztrixack"
-/>
-
-<Navigation />
+<Hero title={data.settings.title} description={data.settings.description} />
+<Filter />
 
 <PostList {...data.posts} />

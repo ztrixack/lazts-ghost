@@ -5,9 +5,9 @@ export async function load() {
   const ghost = GhostAPI.getInstance();
 
   try {
-    const posts = await ghost.getPosts();
+    const settings = await ghost.getSettings();
     
-    return { posts: {posts: [...posts], pagination: posts.meta.pagination } };
+    return { settings };
   } catch (e) {
     error(404, 'Not found');
   }
