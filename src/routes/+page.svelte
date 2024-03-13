@@ -1,6 +1,20 @@
 <script lang="ts">
+  import Featured from '$lib/components/Featured.svelte';
+  import Navigation from '$lib/components/Navigation.svelte';
+  import PostList from '$lib/components/PostList.svelte';
+
   let { data } = $props();
 </script>
 
-<h1 class="text-red-500">{data.settings.title ?? ''}</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<Featured
+  title={data.settings.title}
+  description={data.settings.description}
+  cover_image={data.settings.cover_image}
+  facebook={data.settings.facebook}
+  twitter={data.settings.twitter}
+  youtube="ztrixack"
+/>
+
+<Navigation />
+
+<PostList {...data.posts} />

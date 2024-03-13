@@ -25,13 +25,13 @@ export class GhostAPI {
   }
 
   public async getSettings() {
-    return await this.api.settings.browse();
+    return await this.api.settings
+      .browse()
   }
 
   public async getSearch() {
-    return await this.api.posts.browse({ limit: 'all' }).catch((err: any) => {
-      console.log(err);
-    });
+    return await this.api.posts
+      .browse({ limit: 'all' })
   }
 
   public async getPosts(page: number = 1) {
@@ -41,20 +41,15 @@ export class GhostAPI {
         limit: 10,
         page: page,
       })
-      .catch((err: string | undefined) => {
-        throw new Error(err);
-      });
   }
 
   public async getPost(slug: string) {
-    return await this.api.posts.read({ slug }, { include: ['tags', 'authors'] }).catch((err: any) => {
-      console.error(err);
-    });
+    return await this.api.posts
+      .read({ slug }, { include: ['tags', 'authors'] })
   }
 
   public async getPage(slug: string) {
-    return await this.api.pages.read({ slug }, { include: ['tags'] }).catch((err: any) => {
-      console.error(err);
-    });
+    return await this.api.pages
+      .read({ slug }, { include: ['tags'] })
   }
 }
