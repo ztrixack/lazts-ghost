@@ -13,7 +13,8 @@
 	"insertPragma": false,
 	"plugins": [
 		"prettier-plugin-svelte",
-		"prettier-plugin-tailwindcss"
+		"prettier-plugin-tailwindcss",
+		"prettier-plugin-organize-imports"
 	],
 	"tailwindConfig": "./tailwind.config.cjs"
 }
