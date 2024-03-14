@@ -1,13 +1,15 @@
 <script lang="ts">
   import dayjs from 'dayjs';
 
-  export let title: string | undefined;
-  export let excerpt: string | undefined;
-  export let reading_time: number | undefined;
-  export let feature_image: string | null | undefined;
-  export let feature_image_alt: string | null | undefined;
-  export let published_at: string | null | undefined;
-  export let link: string | undefined;
+  let { title, excerpt, reading_time, feature_image, feature_image_alt, published_at, link } = $props<{
+    title: string | undefined;
+    excerpt: string | undefined;
+    reading_time: number | undefined;
+    feature_image: string | null | undefined;
+    feature_image_alt: string | null | undefined;
+    published_at: string | null | undefined;
+    link: string | undefined;
+  }>();
 
   const datetime = dayjs(published_at);
 </script>
@@ -33,24 +35,20 @@
     />
   </div>
 
-  <div class="flex flex-1 flex-col justify-between">
+  <a class="group flex flex-1 flex-col justify-between hover:bg-gray-100" href={link}>
     <div class="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
-      <a href={link}>
-        <h3 class="font-bold uppercase text-gray-900">{title}</h3>
-      </a>
-
+      <h3 class="text-3xl font-bold uppercase text-gray-900 group-hover:text-orange-700">{title}</h3>
       <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
         {excerpt}
       </p>
     </div>
 
     <div class="sm:flex sm:items-end sm:justify-end">
-      <a
-        href={link}
-        class="block bg-amber-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-amber-400"
+      <span
+        class="block bg-orange-500 px-5 py-3 text-center text-xs font-bold uppercase text-white transition group-hover:bg-orange-700"
       >
         {reading_time} min read
-      </a>
+      </span>
     </div>
-  </div>
+  </a>
 </article>

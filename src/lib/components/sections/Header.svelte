@@ -1,6 +1,6 @@
 <script lang="ts">
   import Icon from '@iconify/svelte';
-  import BrandIcon from './BrandIcon.svelte';
+  import BrandIcon from '$lib/components/elements/BrandIcon.svelte';
 
   let { facebook, twitter, youtube } = $props<{
     facebook: string | undefined;

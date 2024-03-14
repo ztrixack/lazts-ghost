@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Header from '$lib/components/Header.svelte';
-  import Footer from '$lib/components/Footer.svelte';
+  import Header from '$lib/components/sections/Header.svelte';
+  import Footer from '$lib/components/sections/Footer.svelte';
   import '../app.css';
 
   let { data, children } = $props();
@@ -10,4 +10,4 @@
 
 {@render children()}
 
-<Footer />
+<Footer title={data.settings.title} />

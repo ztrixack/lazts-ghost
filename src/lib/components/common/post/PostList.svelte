@@ -1,6 +1,6 @@
 <script lang="ts">
-  import BlogCard from '$lib/components/BlogCard.svelte';
-  import PaginationComponent from '$lib/components/Pagination.svelte';
+  import PostItem from '$lib/components/common/post/PostItem.svelte';
+  import PaginationComponent from '$lib/components/navigations/Pagination.svelte';
   import type { PostOrPage, Pagination } from '@tryghost/content-api';
 
   let { posts, pagination } = $props<{ posts: PostOrPage[]; pagination: Pagination }>();
@@ -8,14 +8,14 @@
 
 <div class="container mx-auto my-12 flex flex-col space-y-4">
   {#each posts as post (post.uuid)}
-    <BlogCard
+    <PostItem
       title={post.title}
       excerpt={post.excerpt}
       reading_time={post.reading_time}
       feature_image={post.feature_image?.toString()}
       feature_image_alt={post.feature_image_alt?.toString()}
       published_at={post.published_at?.toString()}
-      link="/journeys/{post.slug}"
+      link="/{(post.tags && post.tags[0]) || 'posts'}/{post.slug}"
     />
   {/each}
 </div>
